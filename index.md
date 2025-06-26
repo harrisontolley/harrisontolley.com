@@ -4,12 +4,16 @@ layout: default
 
 # Welcome to My Blog
 
-[View all posts](./_posts)
+[View all posts](blog.md)
 
 ### Featured Post
+
 {% assign first_post = site.posts | first %}
-[{{ first_post.title }}]({{ first_post.url }}) – {{ first_post.date | date: "%B %d, %Y" }}
+- [{{ first_post.title }}]({{ first_post.url }}) – {{ first_post.date | date: "%B %d, %Y" }}
+
 {{ first_post.excerpt }}
+
+---
 
 ### Categories
 - [Projects](projects.md)
