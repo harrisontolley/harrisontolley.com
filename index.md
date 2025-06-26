@@ -6,6 +6,10 @@ layout: default
 
 [View all posts](./_posts)
 
+### Featured Post
+{% assign first post = site.posts | first %}
+- [{{ first_post.title }}]({{ first_post.url }}) – {{ first_post.date | date: "%B %d, %Y" }}
+
 ### Categories
 - [Projects](projects.md)
 - [Thoughts](thoughts.md)
