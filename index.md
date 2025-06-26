@@ -9,3 +9,4 @@ layout: default
 ### Categories
 - [Projects](projects.md)
 - [Thoughts](thoughts.md)
+- [Blog](blog.md)
