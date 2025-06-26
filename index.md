@@ -9,6 +9,7 @@ layout: default
 ### Featured Post
 {% assign first post = site.posts | first %}
 - [{{ first_post.title }}]({{ first_post.url }}) – {{ first_post.date | date: "%B %d, %Y" }}
+{{ first_post.excerpt }}
 
 ### Categories
 - [Projects](projects.md)
