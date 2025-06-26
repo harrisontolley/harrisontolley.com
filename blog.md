@@ -2,6 +2,7 @@
 layout: default
 title: Blog
 ---
+{% seo %}
 
 # Blog Posts
 

@@ -1,6 +1,9 @@
 ---
 layout: default
+title: Harrison Tolley's Blog
+description: Things I've been thinking about, working on, and figuring out.
 ---
+{% seo %}
 
 # Welcome to My Blog
 
