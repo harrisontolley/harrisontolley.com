@@ -22,3 +22,6 @@
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
+
+script.py
+all_code_output.txt
