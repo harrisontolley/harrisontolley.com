@@ -27,14 +27,12 @@ Basically, I can't just come on here and blast some crap into the ether.
 
 So all-in-all, this isn't really for you, it's rather me serving myself. A diary and a workbook to think aloud. Maybe you'll find this interesting, or gain some value out of it, but maybe not.
 
-If you still care about me, at the time of writing I am a 21 year old male, where my current interests are poker, game theory, reading, excercising, and programming - again, rather average. I graduated from The University of Queensland in 2024 with a Bachelor's degree in Computer Science. I currently live in Canberra, Australia. I work at The University of New South Wales as a researcher on a defence project aimed at benchmarking the ethical readiness of autonomous weapon systems. Pretty much, we're trying to make benchmarks so that killer AI robots are ethical. Not so average job...? 
+If you still care about me - at the time of writing I am a 21 year old male, where my current interests are poker, game theory, reading, excercising, and programming - again, rather average. I graduated from The University of Queensland in 2024 with a Bachelor's degree in Computer Science. I currently live in Canberra, Australia. I work at The University of New South Wales as a researcher on a defence project aimed at benchmarking the ethical readiness of autonomous weapon systems. Pretty much, we're trying to make benchmarks so that killer AI robots are ethical. Not so average job...? 
 
 Maybe I'll make some videos on here, maybe not. I have a few ideas for the next posts, but beyond that, it beats me man. We will see what happens.
 
 Thats all from me today.
 
 <img src="/images/shackle_break.jpg" alt="Shackle breaking" style="max-width:100%;height:auto;">
-
-Dobby is free!
 
 Harry.
