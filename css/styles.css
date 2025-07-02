@@ -288,3 +288,11 @@ h4 {
     transform: translateX(-50%) translateY(0);
     opacity: 1;
 }
+
+.post-body img {
+    display: block;
+    margin: 1rem auto;
+    /* optionally constrain its max-width so it never overflows: */
+    max-width: 100%;
+    height: auto;
+}
