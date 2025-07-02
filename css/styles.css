@@ -56,11 +56,14 @@ body {
 }
 
 .site-header h1 {
-    font-size: 2.75rem;
+    /* clamps from 3.2 vw on desktops down to 1.8 rem on phones */
+    font-size: clamp(1.8rem, 3.2vw, 2.75rem);
     margin: 0;
     text-transform: lowercase;
     letter-spacing: .5px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+    /* allow wrapping instead of overflowing */
+    overflow-wrap: break-word;
 }
 
 .site-header h1 a {
@@ -70,29 +73,24 @@ body {
 
 .controls {
     display: flex;
+    flex-wrap: wrap;
+    /* allow wrapping instead of column switch */
     justify-content: space-between;
     align-items: center;
-    margin: -.5rem 0 1.25rem;
-    /* pull it closer to list */
-    flex-wrap: wrap;
     gap: .75rem;
+    margin: -.25rem 0 1rem;
+    /* tighter on mobile */
 }
 
 .controls-left {
     display: flex;
-    align-items: center;
-    gap: .5rem
+    gap: .5rem;
+    flex: 1 1 auto
 }
 
 @media(max-width:600px) {
-    .controls {
-        flex-direction: column;
-        align-items: flex-start
-    }
-
     .sort-btn {
-        align-self: flex-end;
-        margin-top: .4rem
+        margin-left: auto
     }
 }
 
@@ -142,11 +140,12 @@ body {
 
 /* smaller, right-aligned pin badge */
 .pin-badge {
-    font-size: 0.7rem;
+    font-size: .7rem;
     color: #d97706;
-    margin: 0;
-    transform: translateY(-0.15em);
-    align-self: center;
+    display: flex;
+    /* takes line height of parent */
+    align-items: center;
+    margin-left: .4rem;
 }
 
 .post-header {
@@ -200,8 +199,9 @@ h4 {
 /* ----------  filter chips  ---------- */
 .filter-chips {
     display: flex;
+    flex-wrap: wrap;
     gap: .5rem;
-    flex-wrap: wrap
+    row-gap: .4rem
 }
 
 .chip {
