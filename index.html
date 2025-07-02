@@ -16,6 +16,9 @@
 
 <body>
     <div class="layout">
+        <!-- toast notification -->
+        <div id="toast" class="toast">Email address copied to clipboard</div>
+
         <!-- Left & right “borders” -->
         <div class="sidebar side-left"></div>
 
@@ -29,7 +32,7 @@
                     <span>·</span>
                     <a href="https://www.linkedin.com/in/harrison-tolley/" target="_blank">LinkedIn</a>
                     <span>·</span>
-                    <a href="mailto:you@domain.com">Email me</a>
+                    <a id="email-link" href="mailto:me@harrisontolley.com">Email me</a>
                 </nav>
 
                 <div class="controls">
@@ -52,6 +55,7 @@
     </div>
 
     <script src="js/site.js" defer></script>
+    <script src="js/toast.js" defer></script>
 </body>
 
 </html>

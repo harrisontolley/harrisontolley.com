@@ -262,3 +262,29 @@ h4 {
     color: #6b7280;
     margin: 0 .25rem
 }
+
+/* toast notification */
+.toast {
+    position: fixed;
+    /* bottom: 1.5rem; */
+    top: 1.trem;
+
+    left: 50%;
+    /* transform: translateX(-50%) translateY(100%); */
+    transform: translateX(-50%) translateY(-100%);
+    background: #1e3a8a;
+    color: white;
+    padding: .75rem 1.25rem;
+    border-radius: .375rem;
+    font-size: .875rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .3s ease, opacity .3s ease;
+    z-index: 999;
+}
+
+.toast.show {
+    /* transform: translateX(-50%) translateY(0); */
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
