@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>harrisontolley.com – Blog</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- JS libs (markdown-it/MathJax still used by the post page) -->
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="layout">
+        <!-- Left & right “borders” -->
+        <div class="sidebar side-left"></div>
+
+        <main class="content">
+            <header class="site-header">
+                <h1><a href="index.html">harrisontolley.com</a></h1>
+
+                <!-- social / contact -->
+                <nav class="social-links">
+                    <a href="https://github.com/harrisontolley" target="_blank">GitHub</a>
+                    <span>·</span>
+                    <a href="https://www.linkedin.com/in/harrison-tolley/" target="_blank">LinkedIn</a>
+                    <span>·</span>
+                    <a href="mailto:you@domain.com">Email me</a>
+                </nav>
+
+                <div class="controls">
+                    <div class="controls-left">
+                        <span class="filter-label">Filters:</span>
+                        <div id="category-filters" class="filter-chips"><!-- chips injected here --></div>
+                    </div>
+
+                    <button id="sort-toggle" class="sort-btn" aria-label="Toggle sort order">
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M2 6l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <ul id="post-list" class="post-list"></ul>
+        </main>
+
+        <div class="sidebar side-right"></div>
+    </div>
+
+    <script src="js/site.js" defer></script>
+</body>
+
+</html>

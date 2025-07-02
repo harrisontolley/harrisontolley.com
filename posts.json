@@ -1,0 +1,31 @@
+[
+    {
+        "title": "My First Post",
+        "date": "2025-07-01",
+        "categories": [
+            "Philosophy",
+            "Math"
+        ],
+        "filename": "2025-07-01-first-post.md",
+        "blurb": "A quick proof of \\(e^{i\\pi}+1=0\\)."
+    },
+    {
+        "title": "Another Test Post",
+        "date": "2025-06-12",
+        "categories": [
+            "Tech"
+        ],
+        "filename": "2025-06-12-another-post.md",
+        "blurb": "Comparing vanilla JS to Eleventy."
+    },
+    {
+        "title": "Euler’s Identity & Why It Matters",
+        "date": "2025-07-15",
+        "categories": [
+            "Math"
+        ],
+        "filename": "2025-07-15-math-video-test.md",
+        "blurb": "Visual intuition for \\(e^{i\\pi}\\).",
+        "pinned": true
+    }
+]
