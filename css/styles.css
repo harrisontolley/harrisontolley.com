@@ -144,8 +144,9 @@ body {
 .pin-badge {
     font-size: 0.7rem;
     color: #d97706;
-    /* remove any previous margin-left */
     margin: 0;
+    transform: translateY(-0.15em);
+    align-self: center;
 }
 
 .post-header {
