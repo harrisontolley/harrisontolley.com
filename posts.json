@@ -8,5 +8,16 @@
         "filename": "2025-07-02-what-this-is.md",
         "blurb": "What I plan to use this website for, where I see it going, and what I want to get out of it. A little bit about me, and a little bit about the site.",
         "pinned": true
+    },
+    {
+        "title": "Foreshaddowing the Year...",
+        "date": "2026-01-04",
+        "categories": [
+            "Me",
+            "Updates"
+        ],
+        "filename": "2026-01-04-weekly-update.md",
+        "blurb": "Goals of the upcoming year and following week.",
+        "pinned": false
     }
 ]
