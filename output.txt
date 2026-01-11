@@ -1,0 +1,572 @@
+
+
+# ===== README.md =====
+
+# Personal blog
+This repository contains the source code for harrisontolley.com. 
+
+# ===== post.html =====
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loading… — harrisontolley.com</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="toast" class="toast">Email address copied to clipboard</div>
+
+        <div class="sidebar side-left"></div>
+
+        <main class="content">
+            <!-- same title block as the home page -->
+            <header class="site-header">
+                <h1><a href="index.html">harrisontolley.com</a></h1>
+                <nav class="social-links">
+                    <a href="https://github.com/harrisontolley" target="_blank">GitHub</a>
+                    <span>·</span>
+                    <a href="https://www.linkedin.com/in/harrison-tolley/" target="_blank">LinkedIn</a>
+                    <span>·</span>
+                    <a id="email-link" href="mailto:me@harrisontolley.com">Email me</a>
+                </nav>
+            </header>
+
+            <!-- post container -->
+            <article id="post-container">
+                <!-- filled by JS -->
+                <h2 id="post-title" class="post-title">Loading…</h2>
+
+                <div class="post-meta"></div>
+                <div id="post-body" class="post-body">Please wait …</div>
+            </article>
+        </main>
+
+        <div class="sidebar side-right"></div>
+    </div>
+
+    <script src="js/article.js" defer></script>
+    <script src="js/toast.js" defer></script>
+</body>
+
+</html>
+
+# ===== index.html =====
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>harrisontolley.com – Blog</title>
+
+    <meta name="description"
+        content="Math, philosophy & technology notes by Harrison Tolley - original essays, walkthroughs and code(?) snippets.">
+    <link rel="canonical" href="https://harrisontolley.com/">
+
+    <!-- SOCIAL CARDS -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Harrison Tolley – Blog">
+    <meta property="og:description" content="Math, philosophy & tech notes.">
+    <meta property="og:url" content="https://harrisontolley.com/">
+    <meta property="og:image" content="https://harrisontolley.com/assets/cover.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Harrison Tolley – Blog">
+    <meta name="twitter:description" content="Math, philosophy & technology notes by Harrison Tolley.">
+    <meta name="twitter:image" content="https://harrisontolley.com/assets/cover.png">
+
+    <!--  STRUCTURED DATA  -->
+    <script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"Harrison Tolley – Blog",
+    "url":"https://harrisontolley.com",
+    "description":"Math, philosophy & technology notes by Harrison Tolley.",
+    "publisher":{
+        "@type":"Person",
+        "name":"Harrison Tolley",
+        "url":"https://harrisontolley.com"
+    }
+    }
+    </script>
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- JS libs (markdown-it/MathJax still used by the post page) -->
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="layout">
+        <!-- toast notification -->
+        <div id="toast" class="toast">Email address copied to clipboard</div>
+
+        <!-- Left & right “borders” -->
+        <div class="sidebar side-left"></div>
+
+        <main class="content">
+            <header class="site-header">
+                <h1><a href="index.html">harrisontolley.com</a></h1>
+
+                <!-- social / contact -->
+                <nav class="social-links">
+                    <a href="https://github.com/harrisontolley" target="_blank">GitHub</a>
+                    <span>·</span>
+                    <a href="https://www.linkedin.com/in/harrison-tolley/" target="_blank">LinkedIn</a>
+                    <span>·</span>
+                    <a id="email-link" href="mailto:me@harrisontolley.com">Email me</a>
+                </nav>
+
+                <div class="controls">
+                    <div class="controls-left">
+                        <div id="category-filters" class="filter-chips"><!-- chips injected here --></div>
+                    </div>
+
+                    <button id="sort-toggle" class="sort-btn" aria-label="Toggle sort order">
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M2 6l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <ul id="post-list" class="post-list"></ul>
+        </main>
+
+        <div class="sidebar side-right"></div>
+    </div>
+
+    <script src="js/site.js" defer></script>
+    <script src="js/toast.js" defer></script>
+</body>
+
+</html>
+
+# ===== robots.txt =====
+
+User-agent: *
+Allow: /
+
+Sitemap: https://harrisontolley.com/sitemap.xml
+
+
+# ===== posts.json =====
+
+[
+    {
+        "title": "What is this?",
+        "date": "2025-07-02",
+        "categories": [
+            "Me"
+        ],
+        "filename": "2025-07-02-what-this-is.md",
+        "blurb": "What I plan to use this website for, where I see it going, and what I want to get out of it. A little bit about me, and a little bit about the site.",
+        "pinned": true
+    },
+    {
+        "title": "Foreshadowing the Year...",
+        "date": "2026-01-04",
+        "categories": [
+            "Me",
+            "Updates"
+        ],
+        "filename": "2026-01-04-weekly-update.md",
+        "blurb": "Goals of the upcoming year and following week.",
+        "pinned": false
+    },
+    {
+        "title": "The Next Week...",
+        "date": "2026-01-11",
+        "categories": [
+            "Me",
+            "Updates"
+        ],
+        "filename": "2026-01-11-the-next-week.md",
+        "pinned": false
+    }
+]
+
+# ===== posts/2025-07-02-what-this-is.md =====
+
+---
+title: "What this is?"
+date: "2025-07-02"
+category: "Me"
+tags: [harrisontolley, blog, personal, notes, philosophy, tech, math, coding]
+---
+
+I am creating this website/blog for a few reasons. I essentially want it to function as my pseudo-diary, workbook, and archive.
+
+As of today, the content that I think I will publish here will primarily be things that I've found interesting, I've recently been spending a lot of time thinking about, and/or actively working on (re: my github). 
+
+The things that I've found interesting will be in my pseudo-diary articles, whereas my workbook will contain the things I am actively working on.
+
+The 'archive' is so that later in my life, I can read through what I've done and what I was thinking about, and be mentally transported to the day of writing.
+
+I'm not using this to pretend that I am smarter than I am, or be an 'intellectual', or pretend I have unique philosophical points of view - I believe I'm rather average.
+
+The value of publishing this online is that I am forced to think about the content I will publish. 
+
+One quote I quite like is
+> “The first principle is that you must not fool yourself — and you are the easiest person to fool.”  
+> — *Richard Feynman*
+
+ With me writing this, I know theres a chance that people could see this - anyone could - and so anything I write I have to be able to argue it or provide evidence or make sure it's true. There are things that I pretend to know, that I actually don't know, and if I were to publish these things, then it forces me to know. 
+
+Basically, I can't just come on here and blast some crap into the ether.  
+
+So all-in-all, this isn't really for you, it's rather me serving myself. A diary and a workbook to think aloud. Maybe you'll find this interesting, or gain some value out of it, but maybe not.
+
+If you still care about me - at the time of writing I am a 21 year old male, where my current interests are poker, game theory, reading, excercising, and programming - again, rather average. I graduated from The University of Queensland in 2024 with a Bachelor's degree in Computer Science. I currently live in Canberra, Australia. I work at The University of New South Wales as a researcher on a defence project aimed at benchmarking the ethical readiness of autonomous weapon systems. Pretty much, we're trying to make benchmarks so that killer AI robots are ethical. Not so average job...? 
+
+Maybe I'll make some videos on here, maybe not. I have a few ideas for the next posts, but beyond that, it beats me man. We will see what happens.
+
+Thats all from me today.
+
+<img src="/images/shackle_break.jpg" alt="Shackle breaking" style="max-width:100%;height:auto;">
+
+Harrison.
+
+# ===== posts/2026-01-11-the-next-week.md =====
+
+---
+title: "The next week..."
+date: "2026-01-11"
+category: "Me"
+tags: [harrisontolley, blog, personal, notes, philosophy, tech, math, coding]
+---
+
+Well, onto another week. 
+
+At work this week I hope to find my project that I will be working on for the next 6 months. Ideally it will foster transferable technical skills and be interesting (obviously), but regardless I have my plan for this year, and can put up with less than ideal while I make bigger things happen - which will happen. 
+
+I've been self studying some web dev, HTTP, cookies, web browsers and all that jazz this week and found it rather interesting. The rationale behind this is that I figure it's useful to learn things at N+1 layers of abstraction that you use it at. Understanding what's going on behind will help me understand tradeoffs and how technologies work better. I want to understand this side of computers because as I transition into my entrepreneurial career, I ultimately have to sell a product or service. This product/service will have to be all encompassing and include a frontend. No one is going to pay for a CLI (well not many people). So, I will learn frontend. Lucky me...
+
+In my head this product/service will be with Next.js and Vercel (among other things), but I've read today on Reddit that this can be quite expensive when scaling to many users; some say this is a good problem to have. 
+
+This past week I did okay. I sent a business plan idea to my parents and had good feedback. Unfortunately the idea relies on people other than myself (them) and unless they're excited about it (and truly excited), then I can't move too far forward by myself. 
+
+Had a good week of training, back to near full capacity as pre-holiday. 
+
+Poker solver is in a good enough state for me that I can remove it from my mental load. Heads Up Poker has been semi-solved with Monte-Carlo Counterfactual Regret Minimisation (it just takes a really, really long time to run on single thread). 
+
+For my next week:
+- Crank some more frontend self-study hours. Revisit CSS fundamentals, layout control, Tailwind(?), investigate Next.js + Vercel stack economics at scale (and alternatives if need be). 
+- Figure out my project at work and get an understanding of the landscape around the problem I'll have to solve.
+- Sink more hours into Skin in the Game by Nassim Taleb (currently page 95).
+- Another good week of training, no injuries, good focus. 
+
+If I can quickly learn this fullstack development, then I will be laughing later this year. 
+
+Well, let's have a good week,
+Harrison.
+
+# ===== posts/2026-01-04-weekly-update.md =====
+
+---
+title: "Consistency."
+date: "2025-01-04"
+category: "Me"
+tags: [harrisontolley, blog, personal, notes, philosophy, tech, math, coding]
+---
+
+Well, the first week of 2026 is upon us and while I am happy with how things are, there is more to do. 
+
+Being grateful and mindful was a focus of 2025 and I believe I did well and can be happy with most things, situations, and people, but I think it's a curse to always want to do more and to perpetually think you can do better. So, I am committed to writing at least a weekly update of my life that focuses on the wins from the week prior, as well as refocusing on the week ahead.
+
+This first post I will talk about my goals for the year, or what I think they are in this present moment. I include the second clause because as I figure out who I am and what I want, which is happening very frequently (yay personal growth!) my life direction and its accompanying goals do change. 
+
+One of my focuses this year will be on becoming self-sufficient with regards to my employment - i.e. an entrepreneur. 
+
+I've fiddled with the idea of following my family footsteps and becoming an entrepeneur since I was young, but as of recent years figured that would be after years (perhaps even a decade) of work experience until I was 'comfortable' to branch out. But never mind, I'm not waiting for that. Maybe I will write about more of my rationale as to why my perspective has changed in a future post, but for now all I will say is that 'Skin in the Game' by Nassim Taleb was a fantastic read (at least the first 70 or so pages I've finished). 
+
+I do like my job and what I do, and I get to work on problems/do interesting things that I wouldn't get to under my own business, but I have a strong internal urge to figure out my own way for whatever reason. My plan is to figure out what my first business will be part-time while continuing my employment with UNSW until my contract ends in June, by then I aim to go full-time with the/a business. I have an idea for what this first business will be. I am currently in the process of fleshing out the idea and validating it, so I am optimistic and excited. In a future article I will inform of the idea and why I believe it would/wouldn't work, just working through the details now. 
+
+For those who don't know, another interest of my life is working out. This year I want to get into Brazilian jiu-jitsu (BJJ) as a personal hobby alongside my existing training regime. I have been interested in it for a while, primarily the different dimension of problem solving that I don't exercise, but never pulled the trigger just because I have been lazy and the activation energy is too high. 
+
+A focus for my weight training is to refocus and move with intent. Forget haphazardly swinging around and scrolling Reddit. Move with intent. I'm including an additional leg day this year (Upper x3, Lower x2 per week) to hopefully get my deadlift numbers back to something reasonable and ideally pull 300kg later this year. I am unsure if my BJJ training will conflict with this, so I may update my goals later. 
+
+For this upcoming week:
+- This week I am reading 'Skin in the Game' by Nassim Taleb (currently page 69). 
+- Ease back into training, back at 90% working capacity pre-holiday. 
+- Finish my business plan for aforementioned company and talk with parents. 
+- Sink some more hours into current Poker solver project and make some substantial progress. 
+
+Rightio, talk soon,
+Harrison.
+
+# ===== js/toast.js =====
+
+document.addEventListener('DOMContentLoaded', () => {
+    const emailLink = document.getElementById('email-link');
+    const toast = document.getElementById('toast');
+    const address = emailLink.href.replace(/^mailto:/, '');
+
+    async function showToast() {
+        toast.classList.add('show');
+        await new Promise(r => setTimeout(r, 1600));
+        toast.classList.remove('show');
+    }
+
+    emailLink.addEventListener('click', async e => {
+        // copy to clipboard
+        try {
+            await navigator.clipboard.writeText(address);
+        } catch (_) {
+            // fallback for older browsers
+            const tmp = document.createElement('textarea');
+            tmp.value = address;
+            document.body.appendChild(tmp);
+            tmp.select();
+            document.execCommand('copy');
+            tmp.remove();
+        }
+
+        // show confirmation
+        showToast();
+
+        // note: we do NOT preventDefault here,
+        // so mailto: will still fire if supported.
+    });
+});
+
+# ===== js/article.js =====
+
+(async () => {
+  /* -------------  locate the .md file requested  ------------- */
+  const file = new URLSearchParams(location.search).get('file');
+  if (!file) {
+    document.body.innerHTML = '<p style="padding:2rem">Post not specified.</p>';
+    return;
+  }
+
+  /* -------------  fetch and split front-matter  ------------- */
+  const resp = await fetch(`posts/${file}`);
+  if (!resp.ok) {
+    document.body.innerHTML =
+      `<p style="padding:2rem">Could not load post (${resp.status}).</p>`;
+    return;
+  }
+
+  const raw = await resp.text();
+  const [, fm = '', body = raw] = raw.match(/^---([\s\S]+?)---\s*([\s\S]*)$/) || [];
+
+  const meta = Object.fromEntries(
+    fm.split('\n').filter(Boolean).map(l => {
+      const [, k, v] = l.match(/^([A-Za-z0-9_-]+):\s*"?(.+?)"?$/) || [];
+      return [k, v];
+    })
+  );
+
+  /* -------------  header text  ------------- */
+  const fullTitle = meta.title || 'Untitled';
+  document.title = `${fullTitle} — harrisontolley.com`;
+  document.getElementById('post-title').textContent = fullTitle;
+
+  /* -------------  quick meta-line under the title ------------- */
+  function getOrdinal(n){
+    if (n % 10 === 1 && n !== 11) return 'st';
+    if (n % 10 === 2 && n !== 12) return 'nd';
+    if (n % 10 === 3 && n !== 13) return 'rd';
+    return 'th';
+  }
+
+  const cats = meta.categories || meta.category || '';
+  let humanDate = '';
+  if (meta.date) {
+    const d = new Date(meta.date);
+    const monthName = d.toLocaleString('en-US', { month: 'long' });
+    const day = d.getDate();
+    const year = d.getFullYear();
+    humanDate = `${monthName} ${day}${getOrdinal(day)}, ${year}`;
+  }
+
+  document.querySelector('.post-meta').textContent =
+    humanDate + (cats ? ` • ${cats}` : '');
+
+  /* -------------  safe SEO tag injection ------------- */
+  try {
+    const head = document.head;
+
+    const put = (tagName, attrs) => {
+      // use the first distinguishing attribute only
+      const keyAttr = ['name', 'property', 'rel'].find(k => k in attrs);
+      let el = keyAttr ? head.querySelector(`${tagName}[${keyAttr}="${attrs[keyAttr]}"]`)
+                       : null;
+      if (!el) el = document.createElement(tagName);
+      Object.assign(el, attrs);
+      head.appendChild(el);
+    };
+
+    const description =
+      meta.description ||
+      meta.blurb ||
+      body.replace(/[#_*`>~\-\[\]\(\)`]/g, '').slice(0, 150) + '…';
+
+    put('meta', { name: 'description', content: description });
+
+    const keywords = [
+      ...(meta.keywords ? meta.keywords.split(',') : []),
+      ...(meta.categories ? meta.categories.split(',') : [])
+    ].map(w => w.trim()).filter(Boolean).join(', ');
+    if (keywords) put('meta', { name: 'keywords', content: keywords });
+
+    put('link', { rel: 'canonical', href: location.href });
+
+    [
+      ['og:type',        'article'],
+      ['og:title',       fullTitle],
+      ['og:description', description],
+      ['og:url',         location.href]
+    ].forEach(([p, c]) => put('meta', { property: p, content: c }));
+
+    [
+      ['twitter:card',        'summary_large_image'],
+      ['twitter:title',       fullTitle],
+      ['twitter:description', description]
+    ].forEach(([n, c]) => put('meta', { name: n, content: c }));
+
+    const ld = {
+      '@context': 'https://schema.org',
+      '@type'   : 'Article',
+      headline  : fullTitle,
+      description,
+      author: { '@type': 'Person', name: 'Harrison Tolley' },
+      datePublished: meta.date || '',
+      mainEntityOfPage: location.href
+    };
+    let ldScript = head.querySelector('script[type="application/ld+json"]');
+    if (!ldScript) {
+      ldScript = document.createElement('script');
+      ldScript.type = 'application/ld+json';
+      head.appendChild(ldScript);
+    }
+    ldScript.textContent = JSON.stringify(ld);
+  } catch (err) {
+    console.warn('SEO tag generation failed:', err);
+    // continue – the post will still display
+  }
+
+  /* -------------  render Markdown ------------- */
+  const md = window.markdownit({ html: true, linkify: true, typographer: true });
+  document.getElementById('post-body').innerHTML = md.render(body);
+
+  /* -------------  MathJax (if present) ------------- */
+  if (window.MathJax && MathJax.typeset) MathJax.typeset();
+})();
+
+
+# ===== js/site.js =====
+
+// --- ./js/site.js ---
+(async () => {
+  const posts = await fetch('./posts.json').then(r => r.json());
+
+  // helper to get “st/nd/rd/th”
+  function getOrdinal(n) {
+    if (n % 10 === 1 && n !== 11) return 'st';
+    if (n % 10 === 2 && n !== 12) return 'nd';
+    if (n % 10 === 3 && n !== 13) return 'rd';
+    return 'th';
+  }
+
+  // format an ISO date string as e.g. "July 2nd, 2025"
+  function formatDate(iso) {
+    if (!iso) return '';
+    const d = new Date(iso);
+    const month = d.toLocaleString('en-US', { month: 'long' });
+    const day = d.getDate();
+    const year = d.getFullYear();
+    return `${month} ${day}${getOrdinal(day)}, ${year}`;
+  }
+
+  /* ----------  build unique category list  ---------- */
+  const allCats = [...new Set(posts.flatMap(p => p.categories || []))].sort();
+  const catWrap = document.getElementById('category-filters');
+  const selected = new Set();
+
+  allCats.forEach(cat => {
+    const div = document.createElement('div');
+    div.className = 'chip';
+    div.textContent = cat;
+    div.addEventListener('click', () => {
+      selected.has(cat) ? selected.delete(cat) : selected.add(cat);
+      div.classList.toggle('selected');
+      render();
+    });
+    catWrap.appendChild(div);
+  });
+
+  /* ----------  sort button  ---------- */
+  const sortBtn = document.getElementById('sort-toggle');
+  let asc = false;
+  sortBtn.addEventListener('click', () => {
+    asc = !asc;
+    sortBtn.classList.toggle('asc', asc);
+    render();
+  });
+
+  /* ----------  rendering  ---------- */
+  const listEl = document.getElementById('post-list');
+  const md     = window.markdownit({ html: true });
+
+  function passesFilter(p) {
+    if (selected.size === 0) return true;
+    return (p.categories || []).some(c => selected.has(c));
+  }
+
+  function cmp(a, b) {
+    return asc
+      ? new Date(a.date) - new Date(b.date)
+      : new Date(b.date) - new Date(a.date);
+  }
+
+  function render() {
+    listEl.innerHTML = '';
+
+    const visible  = posts.filter(passesFilter);
+    const pinned   = visible.filter(p => p.pinned);
+    const unpinned = visible.filter(p => !p.pinned).sort(cmp);
+
+    [...pinned, ...unpinned].forEach(p => {
+      const li = document.createElement('li');
+      const blurbHtml = md.renderInline(p.blurb);
+      const humanDate = formatDate(p.date);
+      const catsTxt   = (p.categories || []).join(', ');
+
+      li.innerHTML = `
+        <div class="post-header">
+          <a class="post-title"
+             href="post.html?file=${encodeURIComponent(p.filename)}">
+            ${p.title}
+          </a>
+          ${p.pinned ? '<span class="pin-badge">📌 Pinned</span>' : ''}
+        </div>
+        <div class="post-meta">${humanDate}${catsTxt ? ' • ' + catsTxt : ''}</div>
+        <p class="post-blurb">${blurbHtml}</p>
+      `;
+      listEl.appendChild(li);
+    });
+
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetClear && MathJax.typesetClear();
+      MathJax.typesetPromise();
+    }
+  }
+
+  render();
+})();

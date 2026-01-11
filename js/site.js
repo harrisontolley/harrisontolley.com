@@ -55,10 +55,15 @@
     return (p.categories || []).some(c => selected.has(c));
   }
 
+  function safeTime(iso) {
+  const t = Date.parse(iso);
+  return Number.isFinite(t) ? t : -Infinity; // push invalid dates to one end
+  } 
+
   function cmp(a, b) {
-    return asc
-      ? new Date(a.date) - new Date(b.date)
-      : new Date(b.date) - new Date(a.date);
+    const ta = safeTime(a.date);
+    const tb = safeTime(b.date);
+    return asc ? (ta - tb) : (tb - ta);
   }
 
   function render() {
@@ -68,31 +73,38 @@
     const pinned   = visible.filter(p => p.pinned);
     const unpinned = visible.filter(p => !p.pinned).sort(cmp);
 
-    [...pinned, ...unpinned].forEach(p => {
-      const li = document.createElement('li');
-      const blurbHtml = md.renderInline(p.blurb);
-      const humanDate = formatDate(p.date);
-      const catsTxt   = (p.categories || []).join(', ');
+    for (const p of [...pinned, ...unpinned]) {
+      try {
+        const li = document.createElement('li');
 
-      li.innerHTML = `
-        <div class="post-header">
-          <a class="post-title"
-             href="post.html?file=${encodeURIComponent(p.filename)}">
-            ${p.title}
-          </a>
-          ${p.pinned ? '<span class="pin-badge">📌 Pinned</span>' : ''}
-        </div>
-        <div class="post-meta">${humanDate}${catsTxt ? ' • ' + catsTxt : ''}</div>
-        <p class="post-blurb">${blurbHtml}</p>
-      `;
-      listEl.appendChild(li);
-    });
+        // safer date formatting (won't throw / break sort)
+        const humanDate = formatDate(p.date);
+        const catsTxt   = (p.categories || []).join(', ');
 
-    if (window.MathJax && MathJax.typesetPromise) {
-      MathJax.typesetClear && MathJax.typesetClear();
-      MathJax.typesetPromise();
+        // safer blurb rendering (markdown-it optional)
+        const blurbHtml = (window.markdownit && p.blurb)
+          ? md.renderInline(p.blurb)
+          : (p.blurb || '');
+
+        li.innerHTML = `
+          <div class="post-header">
+            <a class="post-title"
+              href="post.html?file=${encodeURIComponent(p.filename)}">
+              ${p.title || 'Untitled'}
+            </a>
+            ${p.pinned ? '<span class="pin-badge">📌 Pinned</span>' : ''}
+          </div>
+          <div class="post-meta">${humanDate}${catsTxt ? ' • ' + catsTxt : ''}</div>
+          <p class="post-blurb">${blurbHtml}</p>
+        `;
+        listEl.appendChild(li);
+      } catch (err) {
+        console.error('Failed to render post:', p, err);
+        // continue rendering remaining posts
+      }
     }
   }
+
 
   render();
 })();

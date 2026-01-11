@@ -1,6 +1,6 @@
 ---
 title: "Consistency."
-date: "2025-01-04"
+date: "2026-01-04"
 category: "Me"
 tags: [harrisontolley, blog, personal, notes, philosophy, tech, math, coding]
 ---
