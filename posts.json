@@ -19,5 +19,15 @@
         "filename": "2026-01-04-weekly-update.md",
         "blurb": "Goals of the upcoming year and following week.",
         "pinned": false
+    },
+    {
+        "title": "The Next Week...",
+        "date": "2026-01-11",
+        "categories": [
+            "Me",
+            "Updates"
+        ],
+        "filename": "2026-01-11-the-next-week.md",
+        "pinned": false
     }
 ]
